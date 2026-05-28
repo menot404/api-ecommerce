@@ -1,3 +1,11 @@
+
+
+// Importer dns package
+const dns = require('dns')
+dns.setServers(['1.1.1.1', '1.0.0.1']);
+
+
+
 const express = require('express');
 require('dotenv').config();
 const connectDB = require('./config/database');

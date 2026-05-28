@@ -4,7 +4,7 @@ const MONGO_URI = `${DB_PROTOCOL}://${DB_HOST}:${DB_PORT}/${DB_NAME}`;
 
 const connectDB = async()=>{
     try {
-        const conn = await mongoose.connect(MONGO_URI);
+        const conn = await mongoose.connect(process.env.MONGO_URI_CLUSTER || MONGO_URI);
         console.log(` ✅ Connexion MongoDB reussie: ${conn.connection.host}`);
         console.log(`📊 Base de données: ${conn.connection.name}`);
     } catch (error) {
